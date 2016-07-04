@@ -1,0 +1,89 @@
+/******************************************************************
+Site Name: RCI Environment
+Author: Aziz Khilawala
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #323944;
+$shade-black:       rgba(21,21,21,0.94);
+$white:             #fff;
+$dark:              #000;
+
+$light-gray:        #f8f9fa;
+$gray:              #eaedf2;
+$header-gray:       #313131;
+$footer-black:      $header-gray;
+$footer-white:      rgba(248,249,250,0.9);
+$footer-para:       rgba(248, 249, 250, 0.6);
+$footer-links:      $footer-para;
+$text-color:        #5c6b80;
+$meta-gray:         #9fa6b4;
+$submenu-gray:      #777;
+$submenu-topBorder: #bc052f;
+
+$tan:               #eceee5;
+
+$green:             #7dd667;
+
+$bones-pink:        #f01d4f;
+$blue:              #2980b9;
+
+$link-color:        #bc052f;
+$link-hover:        darken($link-color, 9%);
+
+$border-color:      #ccc;
+$disabled-gray:     #cfcfcf;
+
+$tel-icon:          #777;
+$tel-number:        $tel-icon;
+$find-us-border:    rgba(119,119,119,0.5);
+$find-us-text:      #606060;
+
+$red-top-border:    rgba(233,15,3,0.6);
+$news-title:        $red-top-border;
+$widgetTitle:       #7c1516;
+
+/* =========mobile menu navigation color variables==============*/
+$bg-mobile-menu:            #191919;
+$bg-arrow-icon:             #252525;
+$bg-mobile-menu-items:      #151515;
+$bg-mobile-sub-menu-items:  #4e4e4e;
+$menu-items:                #3e3e3e;
+$border-bottom:             rgba(109,109,109,0.5);
+$close-Hambuger:            rgba(255, 255, 255, 0.51);
+
+//mobile icon menu colors
+$li-border:       rgba(49,49,49,0.3);
+$dot-menu:        #A9A4A4;
+
+/*=====================footer lower tabs color variables=========*/
+$red-tooltip-border:       rgba(218,54,61,0.3);
+$tooltip-box-shadow:       rgba(218,54,61,0.4);
+$red-title-text:           rgba(233,15,3,0.8);
+$close-icon-color:        rgba(225, 225, 225, 0.19);
+
+$gray-bottom-border:      rgba(225,225,225,0.1);
+$red-top-border:          rgba(233,15,3,0.6);
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/

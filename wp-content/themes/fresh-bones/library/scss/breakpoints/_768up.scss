@@ -1,0 +1,1142 @@
+/******************************************************************
+Site Name: RCI Environment
+Author: Aziz Khilawala
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+*{
+  list-style: none;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+/*=========outer header wrap=============*/
+.top-wrap{
+  width: 100%;
+  height:70px;
+  background-color: $header-gray;
+  position: relative;
+}
+
+/*==========inner header wrap=============*/
+.wrap {
+  width: 95%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+#logo {}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+/*=======outer nav style(icons)===============*/
+nav.top-header-nav{
+  position: relative;
+  margin: 0.5em auto;
+  width:100%;
+  width:95%;
+  .tel-wrapper{
+    position: relative;
+    width: 20%;
+    height:100%;
+    float: left;
+    top:0;
+    font-size:13px;
+    color: $tel-icon;
+    margin:0 0 0 0;
+    .tel-icon{
+      position: absolute;
+      font-size: 150%;
+      left:2%;
+    }
+    .tel-number-1, .tel-number-2{
+      margin-left:2em;
+      display: block;
+    }
+  }
+  ul.icons-list{
+    position: absolute;
+    right: 0%;
+    top:4em;
+    li{
+      display: block;
+      float: left;
+      margin:10px;
+      padding:0;
+      background: $gray;
+      border-radius:10px;
+    }
+    li a{
+    }
+    li:nth-child(1){
+      padding:12px;
+      background:$dark;
+      opacity:0.5;
+    }
+  }
+  .dot-menu:after{
+    display: none;
+    content:'\2807';
+    color: $dot-menu;
+  }
+}
+
+.fa-bars{
+  cursor: pointer;
+  color:#656060;
+}
+
+/*=============poly lang plugin style==========*/
+#polylang-2{
+  position: absolute;
+  right:0;
+  top:-14px;
+  ul{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid $dark;
+    @include border-radius(2em);
+    border-style: outset;
+    overflow: hidden;
+    li{
+      border-right: 2px solid $dark;
+      margin: 0;
+      padding: 15px 25px;
+      font-size:85%;
+    }
+    li.current-lang{
+      background: $dark;
+      a{
+        color: $white;
+      }
+    }
+    li:nth-child(2){
+      border: none;
+    }
+    li a{
+      text-decoration: none;
+      margin:0;
+      color: gray;
+    }
+  }
+}
+
+#desktop-navigation .nav{
+  display: none;
+}
+
+#container{
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+#container.openNav{
+  transform: translate3d(300px,0,0);
+  transition: all 0.5s ease-in-out;
+}
+
+#mobile-navigation{
+  position:absolute;
+  display:block;
+  top:0px;
+  left:-300px;
+  width:300px;
+  height: 100%;
+  background: $bg-mobile-menu-items;
+  span#close-menu{
+    width: 100%;
+    color: $close-Hambuger;
+    display: block;
+    padding: 20px 10px 10px 20px;
+    font-size: 200%;
+  }
+  .mobile-nav{
+    li:first-child{
+      border-top: 1px solid $border-bottom;
+    }
+    li{
+      overflow: hidden;
+      border-bottom: 1px solid $border-bottom;
+      span{
+        float: right;
+        cursor: pointer;
+        text-align: center;
+        font-weight:bold;
+        color:#fff;
+        background: $bg-mobile-menu-items;
+        padding: 13px 0 13px 0;
+        width:20%;
+      }
+      a{
+        display: inline-block;
+        width:80%;
+        background: $bg-mobile-menu;
+        text-decoration: none;
+        color:#636363;
+        font-size: 107%;
+        padding: 11px 10px 13px 20px;
+
+      }
+      a.active-color{
+        color: white;
+      }
+      ul.sub-menu{
+        display: none;
+        margin:0;
+        li:first-child{
+          border-top:none;
+        }
+        li{
+          span{
+            float: left;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #969494;
+            background: $header-gray;
+            padding: 15px 0 14px 20px;
+            display: inline-block;
+          }
+          a{
+            display: inline-block;
+            background: $header-gray;
+            color:#969494;
+            padding:12px 0 12px 10px;
+
+            font-size:inherit;
+          }
+        }
+        li:last-child{
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+#icon-mobile-navigation{
+  display: none;
+}
+
+/*==========setting widget margin-padding to zero==========*/
+.widget{
+  margin: 0;
+  padding: 0;
+}
+
+#home-container{
+  position:relative;
+  img.hero-img{
+    width: 100vw;
+    max-width: 100%;
+  }
+
+  #hero-img-row-id{
+    margin-bottom:0;
+  }
+
+  #four-r{
+    margin-bottom:0;
+    background: rgba(232,231,231,1);
+    padding: 2em 1em 2em 1em;
+    border-bottom-width:2px;
+    border-bottom-style: dotted;
+    border-bottom-color: rgba(97,97,97,0.5);
+    .four-r-class{
+      margin:2em auto;
+    }
+    .widget-title{
+      position: relative;
+      top:0;
+      text-align: left;
+      font-weight:bold;
+      font-size:150%;
+      color: $widgetTitle;
+    }
+    .textwidget{
+      margin-top:0;
+    }
+  }
+
+
+  // rci first row example
+  #rci-first-row{
+    margin:20px auto;
+    margin-bottom: 0;
+    padding-top:10px;
+    .panel-grid-cell{
+      margin:0;
+      padding:0;
+    }
+    .rci-first-row{
+      #pgc-14-rci-first-row-0{
+        width:20%;
+        margin-left:5%;
+        float:left;
+      }
+      #pgc-14-rci-first-row-1{
+        width:60%;
+        float:left;
+        p{
+          margin-left:6px;
+        }
+      }
+      #pgc-14-rci-first-row-2{
+        width:20%;
+        margin-left:5%;
+        clear:both;
+        img{
+          float: right;
+        }
+      }
+      #pgc-14-rci-first-row-3{
+        width:60%;
+        float:left;
+        p{
+          margin-left:6px;
+        }
+      }
+    }
+    .rci-row-col{
+      margin: 20px 0 20px 0;
+      padding: 10px 0 0 0;
+    }
+  }
+
+  // rci second row
+  #rci-second-row{
+    margin:0px auto;
+    padding-top:0px;
+    .panel-grid-cell{
+      margin:0;
+      padding:0;
+    }
+    .rci-second-row{
+      #pgc-14-rci-second-row-0{
+        width:20%;
+        margin-left:5%;
+        float:left;
+      }
+      #pgc-14-rci-second-row-1{
+        width:60%;
+        float:left;
+        p{
+          margin-left:6px;
+        }
+      }
+      #pgc-14-rci-second-row-2{
+        width:20%;
+        margin-left:5%;
+        clear:both;
+        img{
+          float: right;
+        }
+      }
+      #pgc-14-rci-second-row-3{
+        width:60%;
+        float:left;
+        p{
+          margin-left:6px;
+        }
+      }
+    }
+    .rci-row-col{
+      margin: 20px 0 20px 0;
+      padding: 10px 0 0 0;
+    }
+  }
+
+  // rci second row
+  #rci-third-row{
+    margin:0px auto;
+    padding-top:0;
+    .panel-grid-cell{
+      margin:0;
+      padding:0;
+    }
+    .rci-third-row{
+      #pgc-14-rci-third-row-0{
+        width:20%;
+        margin-left:5%;
+        float:left;
+      }
+      #pgc-14-rci-third-row-1{
+        width:60%;
+        float:left;
+        p{
+          margin-left:6px;
+        }
+      }
+      #pgc-14-rci-third-row-2{
+        width:20%;
+        margin-left:5%;
+        clear:both;
+        img{
+          float: right;
+        }
+      }
+      #pgc-14-rci-third-row-3{
+        width:60%;
+        float:left;
+        p{
+          margin-left:6px;
+        }
+      }
+    }
+    .rci-row-col{
+      margin: 20px 0 20px 0;
+      padding: 10px 0 0 0;
+    }
+  }
+  .img-leaf{
+    position: relative;
+    bottom: -0.5em;
+  
+  }
+}
+
+/*========actualities section styles===========*/
+section.wrapper{
+  width: 100%;
+  height: 10%;
+  background:$dark;
+  opacity:0.5;
+  color: $white;
+  position:absolute;
+  bottom:3.8em;
+  display: none;
+  // display: flex;
+  // align-items: flex-start;
+  figure{
+    margin:0 0 0 0;
+    padding:0;
+    margin-left:1em;
+    .title-text{
+      display: none;
+    }
+  }
+  #news-slider{
+    margin: 0.5em 0 0 0.5em;
+    font-size:100%;
+    line-height:10px;
+    height:55px;
+    overflow:hidden;
+    .news-slides{
+      margin:0;
+      padding:0;
+    }
+    .news-slide{
+      height:70px;
+      overflow: hidden;
+      .news-title{
+        color: $white;
+      }
+    }
+  }
+  .news-button-wrap{
+    display: block;
+    position: absolute;
+    top:0;
+    right:0;
+    height:100%;
+    background: $red-top-border;
+    padding: 0 1em 0 1em;
+    a.news-button{
+      position: relative;
+      top:1.5em;
+      text-decoration:none;
+      color: $white;
+      font-size:14px;
+    }
+  }
+
+}
+
+/*============tablet footer styles====================*/
+// //tablet footer style
+
+#inner-footer {
+
+  margin:0 auto;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+
+//Footer >> navigation bar - start
+  nav .footer-links{
+
+    display: block;
+
+    ul{
+
+      margin: 0.5em;
+      padding: 0;
+
+      li{
+
+        padding-bottom: 1em;
+        padding-top: 1em;
+        border-bottom: 0.5px solid $gray-bottom-border;
+        border-bottom-style: ridge;
+
+        &:first-child{
+
+          padding-top: 0.5em;
+
+        }
+
+        &:last-child{
+
+          border-bottom: none;
+
+        }
+
+        a{
+
+          margin:0;
+          padding:0 0 0 2em;
+          height: auto;
+          color:$footer-links;
+          text-decoration: none;
+          font-size: 1.1em;
+
+          &:hover{
+
+            text-decoration: underline;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  //Footer >> navigation bar - end
+
+  #social-icon-wrapper-desktop{
+    display: none;
+  }
+
+  //Footer >> social icons wrapper - start
+  #social-icon-wrapper-tablet{
+
+    border-bottom: 0.5px solid $gray-bottom-border;
+    border-bottom-style: ridge;
+
+    .social-red-line{
+      content:'';
+      border-top: 1px solid $red-top-border;
+      position: relative;
+      top:2.2em;
+    }
+
+    .tablet{
+
+      position: relative;
+      top:1em;
+      left:50%;
+      @include transform(translateX(-50%));
+      list-style: none;
+      font-size:1.2em;
+      color:$footer-links;
+      display: inline-block;
+      text-align: center;
+      background: $header-gray;
+      padding: 0 1em 0 1em;
+      display: table;
+
+    }
+
+    .social-icons{
+
+      list-style: none;
+      display: table;
+      position: relative;
+      top:1.5em;
+      left:50%;
+      @include transform(translateX(-50%));
+
+
+      li{
+
+        display: inline-block;
+        padding: 1em 3em 3em 3em;
+
+      }
+
+    }
+
+  }
+  //Footer >> social icons wrapper - end
+
+//Footer >> Find Us area - start
+#findus-wrapper-desktop{
+
+  display: none;
+
+}
+
+#findus-wrapper-tablet{
+
+  position: relative;
+  top:1.5em;
+//footer images
+#sow-image-3{
+
+  width: 18%;
+  display: inline-block;
+  position: relative;
+  left: 10em;
+  margin-top: 0.7em;
+
+}
+
+#sow-image-4{
+
+  margin-top: 20px;
+  width: 18%;
+  position: relative;
+  left: 10em;
+
+}
+
+//english-french find us text
+  #sow-image-2,#sow-image-5{
+
+    width:11.3em;
+    height: 43px;
+    margin-top:1em;
+    border: 1px solid $find-us-border;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    right:12em;
+    float: right;
+
+
+    img{
+
+      position:absolute;
+      top:0.3em;
+      display: inline-block;
+      float: left;
+      padding: 0px 0 0px 5px;
+
+    }
+
+    h2{
+
+      margin:0;
+      font-size:100%;
+      color:$find-us-text;
+      font-weight: 600;
+      display: inline-block;
+      padding: 0px 0 0px 0px;
+      left:4em;
+      position: absolute;
+      top:0.7em;
+
+    }
+
+  }
+
+  // Address area
+  #text-2{
+
+    width:13.7em;
+    float: right;
+    position: absolute;
+    top:4em;
+    right: 9.5em;
+
+    h4{
+
+      margin-bottom: 0px;
+      font-weight:600;
+      font-size:100%;
+
+    }
+
+    .textwidget{
+
+      margin-top:5px;
+      color:$footer-para;
+
+    }
+
+  }
+
+}
+//Footer >> Find Us area - end
+
+//Footer >> customer area - start
+
+#customer-service-wrapper-desktop{
+  display: none;
+}
+
+#customer-service-wrapper-tablet{
+
+    position: relative;
+
+    .customer-red-line{
+
+      content:'';
+      border-top:1px solid $red-top-border;
+      width: 100%;
+      position: relative;
+      top:4.9em;
+
+    }
+
+  .customer-text-wrapper{
+
+    position: relative;
+    margin-top: 4em;
+    left: 50%;
+    @include transform(translateX(-50%));
+    display: table;
+
+    .reach-us-text{
+
+      display: inline-block;
+      font-size: 1.2em;
+      color:$red-top-border;
+      padding: 0 0.5em 0 1em;
+      background: $header-gray;
+
+    }
+
+    .border-between{
+
+      display: inline-block;
+      content:'';
+      border-top:0.5px solid $footer-links;
+      position: relative;
+      top:-6px;
+      width:0.5em;
+      background: $header-gray;
+
+
+    }
+
+    .customer-service-text{
+
+      display: inline-block;
+      font-size: 1.2em;
+      padding: 0  1em 0 0.5em;
+      background: $header-gray;
+      color: $footer-links;
+
+    }
+
+  }
+
+  .customer-service-info-wrapper{
+
+    color:$footer-links;
+    font-size: 1em;
+    margin-top:2em;
+    position: relative;
+    left:50%;
+    @include transform(translateX(-50%));
+    display: table;
+
+    .phone-area-wrapper{
+
+      //padding-bottom: 0.1em;
+      display: inline-block;
+      width: 49%;
+      text-align: left;
+
+      .customer-area-phone-icon{
+        display: inline-block;
+      }
+
+      .customer-area-phone-text{
+        display: inline-block;
+        position: relative;
+        top: -0.8em;
+        left: 0.2em;
+      }
+
+    }
+
+    .fax-area-wrapper{
+
+      display: inline-block;
+      width: 50%;
+      text-align: center;
+      .customer-area-fax-icon,.customer-area-fax-text{
+        display: inline-block;
+      }
+      .customer-area-fax-icon{
+        //margin-left: 0.1em;
+      }
+      .customer-area-fax-text{
+        //width: 16em;
+        position:relative;
+        top: -0.6em;
+        left: 0.4em;
+      }
+
+    }
+
+    .toll-area-wrapper{
+
+      display: inline-block;
+      width: 49%;
+      text-align: left;
+
+      .customer-area-toll-icon{
+
+        display: inline-block;
+
+      }
+
+      .customer-area-toll-text,.customer-area-toll-free-text{
+
+        display: inline-block;
+
+      }
+
+      .customer-area-toll-text{
+
+        position:relative;
+        top: -0.8em;
+        left: 0.2em;
+
+      }
+
+      .customer-area-toll-free-text{
+
+        width:7em;
+        position:relative;
+        top: -0.8em;
+        left: 0.4em;
+        font-size: 1.1em;
+        color:$footer-white;
+
+      }
+
+    }
+
+
+    .email-area-wrapper{
+
+      display: inline-block;
+      width: 50%;
+      text-align: right;
+
+      .customer-area-email-icon,.customer-area-email-text{
+        display: inline-block;
+      }
+      .customer-area-email-icon{
+        margin-left: 0.2em;
+      }
+      .customer-area-email-text{
+        position:relative;
+        top: -0.6em;
+        left: 0.4em;
+        font-size:1em;
+      }
+    }
+  }
+}
+//Footer >> customer area - end
+
+#lower-footer-tabs-desktop{
+  display: none;
+}
+
+#lower-footer-tabs-tablet{
+
+    position: relative;
+    width: 100%;
+    font-size: 1.1em;
+    margin: 2em 0 0 0;
+
+
+    .billing-area,.admin-area,.sales-area,.repair-area,.account-area{
+      display: block;
+      padding:0 0 0.2em 0;
+      a{
+          width: 100%;
+          text-align: left;
+          padding: 1em 0 1em 2em;
+      }
+    }
+
+  }
+
+#billing-info-wrapper-desktop{
+
+  display: none;
+
+}
+
+  #billing-info-wrapper-tablet{
+
+    position: absolute;
+    bottom: 18.5em;
+    right: 0;
+    pointer-events: none;
+
+    .billing-info{
+
+      opacity:0;
+      z-index:999;
+      cursor:default;
+      margin:0;
+      padding:0;
+      background:#000;
+      width:19em;
+      height:10em;
+      transform:perspective(1000px)  rotate3d(1,0,0,45deg);
+      transform-origin: bottom;
+      transition:all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+      @include box-shadow(0px, -2.5px, 8px, -1px, $tooltip-box-shadow);
+
+      .arrow-down{
+
+        position: absolute;
+        right: 10%;
+        bottom: -12.5%;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #000;
+        @include box-shadow( 0px, 20px, 10px, -7px, #000);
+      }
+    }
+    .onclick-billing-info{
+      opacity:1;
+      -webkit-transform: perspective(1000px) rotate3d(1,0,0,0deg);
+      transform: perspective(1000px) rotate3d(1,0,0,0deg);
+      transition:all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+      pointer-events: auto;
+    }
+
+    .billing-title{
+      list-style: none;
+      color: $red-title-text;
+      display: inline-block;
+      width: 6em;
+      margin: 0.5em 0 0 1.4em;
+      font-size: 1em;
+    }
+    .billing-close-icon{
+      display: inline-block;
+      font-size: 1.5em;
+      color: $close-icon-color;
+      position: absolute;
+      top: 0.1em;
+      right: 0.5em;
+      cursor: pointer;
+    }
+
+    .billing-inner-section-wrapper{
+
+      position: relative;
+      padding:1em;
+
+      .billing-phone-wrapper,.billing-fax-wrapper{
+        padding-bottom: 0.3em;
+      }
+
+      .billing-phone-icon,.billing-fax-icon,.billing-email-icon{
+        display: inline-block;
+      }
+      .billing-phone-text,.billing-fax-text,.billing-email-text{
+        display: inline-block;
+        font-size: 0.8em;
+        color: $footer-links;
+      }
+
+      .billing-phone-text{
+        position: relative;
+        top: -0.8em;
+        left: 0.6em;
+        width: 18em;
+      }
+      .billing-fax-icon,.billing-email-icon{
+        margin-left: 0.2em;
+      }
+      .billing-fax-text{
+        position: relative;
+        top: -0.5em;
+        left: 0.6em;
+      }
+      .billing-email-icon{
+        margin-top: 0.2em;
+      }
+      .billing-email-text{
+        position: relative;
+        top: -0.6em;
+        left: 0.6em;
+      }
+    }
+
+
+  } //billing info wrapper end
+
+}
+
+
+#copyright{
+  background:$shade-black;
+  text-align: center;
+  font-size:90%;
+  margin-top: 2em;
+  .copy-text{
+    margin: 10px 0 0 0;
+    color:$find-us-text;
+  }
+}
+
+
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.widget{
+  margin:0;
+  padding: 0;
+}
+
+/* links widget */
+.widget_links {}
+.widget_links ul {}
+.widget_links ul li {}
+.widget_links ul li a {}
+
+/* meta widget */
+.widget_meta {}
+.widget_meta ul {}
+.widget_meta ul li {}
+.widget_meta ul li a {}
+
+/* pages widget */
+.widget_pages {}
+.widget_pages ul {}
+.widget_pages ul li {}
+.widget_pages ul li a {}
+
+/* recent-posts widget */
+.widget_recent_entries {}
+.widget_recent_entries ul {}
+.widget_recent_entries ul li {}
+.widget_recent_entries ul li a {}
+
+/* archives widget */
+.widget_archive {}
+.widget_archive ul {}
+.widget_archive ul li {}
+.widget_archive ul li a {}
+.widget_archive select {}
+.widget_archive option {}
+
+/* tag-cloud widget */
+.widget_links {}
+.widget_links li:after {}
+.widget_links li:before {}
+.widget_tag_cloud {}
+.widget_tag_cloud a {}
+.widget_tag_cloud a:after {}
+.widget_tag_cloud a:before {}
+
+/* calendar widget */
+.widget_calendar {}
+#calendar_wrap {}
+#calendar_wrap th {}
+#calendar_wrap td {}
+#wp-calendar tr td {}
+#wp-calendar caption {}
+#wp-calendar a {}
+#wp-calendar #today {}
+#wp-calendar #prev {}
+#wp-calendar #next {}
+#wp-calendar #next a {}
+#wp-calendar #prev a {}
+
+/* category widget */
+.widget_categories {}
+.widget_categories ul {}
+.widget_categories ul li {}
+.widget_categories ul ul.children {}
+.widget_categories a {}
+.widget_categories select{}
+.widget_categories select#cat {}
+.widget_categories select.postform {}
+.widget_categories option {}
+.widget_categories .level-0 {}
+.widget_categories .level-1 {}
+.widget_categories .level-2 {}
+.widget_categories .level-3 {}
+
+/* recent-comments widget */
+.recentcomments {}
+#recentcomments {}
+#recentcomments li {}
+#recentcomments li a {}
+.widget_recent_comments {}
+
+/* search widget */
+#searchform {}
+.widget_search {}
+.screen-reader-text {}
+
+/* text widget */
+.textwidget {}
+.widget_text {}
+.textwidget p {}
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+// .footer-links {
+// ul {
+// 	li {
+// 		a {
+// 			&:hover {}
+// 		}
+// 		/*
+// 		be careful with the depth of your menus.
+// 		it's very rare to have multi-depth menus in
+// 		the footer.
+// 		*/
+// 		ul {}
+// 	}
+// }
+// } /* end .footer-links */

@@ -1,0 +1,952 @@
+/******************************************************************
+Site Name: RCI Environment
+Author: Aziz Khilawala
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+/*=========outer header wrap=============*/
+.top-wrap{
+  width: 100%;
+  height:70px;
+  background-color: $header-gray;
+  position: relative;
+  @include box-shadow(0, 0, 20px, 6px, rgba(0,0,0,0.4));
+}
+
+/*=======outer nav style(icons)===============*/
+nav.top-header-nav{
+  position: relative;
+  margin: 0 auto;
+  width: 1040px;
+  .tel-wrapper{
+    position: relative;
+    width: 12%;
+    height:100%;
+    float: left;
+    font-size:13px;
+    top:0;
+    color: $tel-icon;
+    margin:12px 0 0 0;
+    .tel-icon{
+      position: absolute;
+      font-size: 150%;
+      left:2%;
+    }
+    .tel-number-1, .tel-number-2{
+      margin-left:18%;
+      display: block;
+    }
+  }
+  ul.icons-list{
+    position: absolute;
+    left: 10%;
+    top:4px;
+    margin:2px 0 0 2%;
+    li:nth-child(1){
+      padding:0;
+    }
+    li{
+      float: left;
+      margin:0;
+      padding:0;
+      background: none;
+      border-radius:0px;
+    }
+    li span.hamburger-icon{
+      display: none;
+    }
+    li a{
+    }
+    li a:nth-child(1){
+      margin-left: 2em;
+      cursor:pointer;
+    }
+  }
+  .dot-menu:after{
+    display: none;
+    content:'\2807';
+    color: $dot-menu;
+  }
+}
+
+/*=============poly lang plugin style==========*/
+#polylang-2{
+  position: absolute;
+  top:-7px;
+  right:0;
+  ul{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    border: 1px solid $dark;
+    @include border-radius(2em);
+    border-style: outset;
+    overflow: hidden;
+    li{
+      border-right: 2px solid $dark;
+      margin: 0;
+      padding: 15px 25px;
+      font-size: 85%;
+    }
+    li.current-lang{
+      background: $dark;
+      a{
+        color: $white;
+      }
+    }
+    li:nth-child(2){
+      border: none;
+    }
+    li a{
+      text-decoration: none;
+      margin:0;
+      color: gray;
+    }
+  }
+}
+
+/*============navigation menu styles=============*/
+
+/*======disabling mobile nav=====*/
+#mobile-navigation{
+  display: none;
+}
+
+.mobile-nav{
+  display: none;
+}
+
+/*==========inner header wrap=============*/
+
+.wrap {
+  position: relative;
+  width: 1040px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#desktop-navigation{
+  display: block;
+  position: absolute;
+  right: 0;
+  top:1em;
+  .nav {
+    display: block;
+    border: 0;
+    background: none;
+    ul{
+      background:none;
+      margin-top:0;
+    }
+    li{
+      float: left;
+      position: relative;
+
+      a {
+        border-bottom: 0;
+        color:$black;
+        /*
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
+        */
+        &:hover, &:focus {
+          color: $white;
+          text-decoration: underline;
+        }
+      }
+
+      &:first-child {}
+      &:last-child {}
+
+      /*
+      plan your menus and drop-downs wisely.
+      */
+      ul.sub-menu,
+      ul.children {
+        margin-top: 0;
+        border: 1px solid #ccc;
+        border-top: 0;
+        position: absolute;
+        visibility: hidden;
+        z-index: 8999;
+
+        li {
+
+
+          a {
+            padding-left: 10px;
+            border-right: 0;
+            display: block;
+            width: 14em;
+            border-bottom: 1px solid #ccc;
+            color:$submenu-gray;
+            font-size:90%;
+            font-weight: 400;
+            height:3em;
+            &:hover,
+            &:focus {
+              text-decoration: none;
+              color: $link-hover;
+              background: $gray;
+            }
+
+            &:link {}
+          }
+
+          &:first-child {}
+
+          &:last-child {
+
+            a {
+              border-bottom: 0;
+            }
+          }
+
+          /*
+          if you need to go deeper, go nuts
+          just remember deeper menus suck
+          for usability. k, bai.
+          */
+          ul {
+            top:0;
+            left:100%;
+          }
+        }
+
+        /* highlight sub-menu current page */
+        li.current-menu-item,
+        li.current_page_item,
+        li.current_page_ancestor {
+          a {}
+        }
+      }
+
+      /* showing sub-menus */
+      &:hover > ul {
+        top: auto;
+        visibility:visible;
+      }
+
+    } /* end .menu ul li */
+
+
+    li a{
+      display: block;
+      color: $black;
+      text-decoration: none;
+      border-bottom: 0;
+      height: 4.4em;
+      padding:0.75em;
+      &:hover{
+        color: $link-color;
+        text-decoration: none;
+      }
+    }
+
+  }
+}
+
+
+/*=============menu drop down style===========*/
+.nav li ul li{
+  background-color: $white;
+  color:$black;
+  a{
+    height: auto;
+  }
+}
+.nav li ul li:nth-child(1){
+  border-top: 3px solid $submenu-topBorder;
+}
+
+
+#icon-mobile-navigation{
+  display: none;
+}
+
+/*==========setting widget margin-padding to zero==========*/
+.widget{
+  margin: 0;
+  padding: 0;
+}
+
+/*=======home page content container==========*/
+#home-container{
+  position:relative;
+  // img.hero-img{
+  //   width: 100vw;
+  //   max-width: 100%;
+  // }
+  #hero-img-row-id{
+    margin-bottom:0;
+  }
+  #four-r{
+    margin-bottom:0;
+    background: rgba(232,231,231,1);
+    padding: 2em 0 2em 0;
+    border-bottom-width:2px;
+    border-bottom-style: dotted;
+    border-bottom-color: rgba(97,97,97,0.5);
+    .four-r-class{
+      width:65%;
+      margin:2em auto;
+    }
+    .widget-title{
+      position: relative;
+      top:0;
+      text-align: left;
+      font-weight:bold;
+      font-size:150%;
+      color: $widgetTitle;
+    }
+    .textwidget{
+      margin-top:0;
+    }
+  }
+
+  #rci-first-row{
+    margin:20px auto;
+    padding-top:10px;
+    .panel-grid-cell{
+      margin:0;
+      padding:0;
+    }
+    .rci-first-row{
+      #pgc-14-rci-first-row-0{
+        width:20%;
+        float: left;
+        margin-left:5%;
+      }
+      #pgc-14-rci-first-row-1{
+        width:25%;
+        float: left;
+        p{
+          margin-left:16px;
+        }
+      }
+      #pgc-14-rci-first-row-2{
+        width: 12%;
+        margin-left: 4%;
+        float: left;
+        clear: none;
+        img{
+          float: right;
+        }
+      }
+      #pgc-14-rci-first-row-3{
+        width:20%;
+        p{
+          margin-left: 1em;
+          width: 18.5em;
+        }
+      }
+    }
+    .rci-row-col{
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // rci second row
+  #rci-second-row{
+    margin:20px auto;
+    padding-top:10px;
+    .panel-grid-cell{
+      margin:0;
+      padding:0;
+    }
+    .rci-second-row{
+      #pgc-14-rci-second-row-0{
+        width:20%;
+        float: left;
+        margin-left:5%;
+      }
+      #pgc-14-rci-second-row-1{
+        width:25%;
+        float: left;
+        p{
+          margin-left:16px;
+          width: 18em;
+        }
+      }
+      #pgc-14-rci-second-row-2{
+        width: 12%;
+        margin-left: 4%;
+        float: left;
+        clear: none;
+        img{
+          float: right;
+        }
+      }
+      #pgc-14-rci-second-row-3{
+        width:20%;
+        p{
+          margin-left: 1em;
+          width: 18em;
+        }
+      }
+    }
+    .rci-row-col{
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // rci third row
+  #rci-third-row{
+    margin:20px auto;
+    padding-top:10px;
+    .panel-grid-cell{
+      margin:0;
+      padding:0;
+    }
+    .rci-third-row{
+      #pgc-14-rci-third-row-0{
+        width:20%;
+        float: left;
+        margin-left:5%;
+      }
+      #pgc-14-rci-third-row-1{
+        width:25%;
+        float: left;
+        p{
+          margin-left:16px;
+          width: 18em;
+        }
+      }
+      #pgc-14-rci-third-row-2{
+        width: 12%;
+        margin-left: 4%;
+        float: left;
+        clear: none;
+        img{
+          float: right;
+        }
+      }
+      #pgc-14-rci-third-row-3{
+        width:20%;
+        p{
+          margin-left: 1em;
+          width: 18em;
+        }
+      }
+    }
+    .rci-row-col{
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .img-leaf{
+    position: relative;
+    bottom: -0.5em;
+    margin-right: 12%;
+  }
+}
+
+/*========actualities section styles===========*/
+section.wrapper{
+  width: 20em;
+  height: 13em;
+  background:#000;
+  opacity:0.5;
+  color: $white;
+  position:absolute;
+  bottom:6px;
+  right:7%;
+  display: none;
+  /*===========actualities icon style===========*/
+  figure{
+    margin:0;
+    padding:0;
+    margin-left:0.5em;
+    display:flex;
+    justify-content: flex-start;
+    .title-text{
+      display: inline-block;
+      margin-top: 1em;
+      margin-left: 3.5em;
+    }
+  }
+
+  /*======news slider area styles=================*/
+  #news-slider{
+    margin: 20px;
+    font-size:14px;
+    line-height:14px;
+    width:100%;
+    height:70px;
+    overflow:hidden;
+    .news-slides{
+      height: 900px;
+      width: 100%;
+      margin:0;
+      padding:0;
+    }
+    .news-slide{
+      width:95%;
+    }
+  }
+  /*==============view news link style==================*/
+  .news-button-wrap{
+    display: block;
+    position: relative;
+    background: none;
+    padding:0;
+    a.news-button{
+      margin-right:1em;
+      position:relative;
+      float: right;
+      top:-5px;
+      text-decoration:none;
+      color: $white;
+      font-size:14px;
+      background: none;
+      padding:0;
+
+      &:hover{
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//desktop footer style
+#inner-footer {
+  width: 65em !important;
+  margin:0 auto;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+
+  &:after{
+    content: '';
+    clear:both;
+    display: table;
+  }
+
+  #findus-wrapper-tablet{
+    display: none;
+  }
+
+  // find us area
+  #findus-wrapper-desktop{
+    display: block;
+
+    #sow-image-2,#sow-image-5{
+      width:18%;
+      height: 43px;
+      margin-top:1em;
+      border: 1px solid $find-us-border;
+      border-radius: 5px;
+      display: inline-block;
+      img{
+        position:absolute;
+        top:1.4em;
+        display: inline-block;
+        float: left;
+        padding: 0px 0 0px 5px;
+      }
+      h4{
+        display: none;
+      }
+      h2{
+        margin:0;
+        font-size:100%;
+        color:$find-us-text;
+        font-weight: 600;
+        float: left;
+        display: inline-block;
+        padding: 10px 0 0px 0px;
+        margin-left:4em;
+      }
+    }
+    // Address area
+    #text-2{
+      width:21%;
+      h4{
+        margin-bottom: 0px;
+        font-weight:600;
+        font-size:100%;
+      }
+      .textwidget{
+        margin-top:5px;
+        color:$footer-para;
+
+      }
+    }
+
+    //footer images
+    #sow-image-3{
+      margin-top: 30px;
+      width: 18%;
+      display: inline-block;
+    }
+    #sow-image-4{
+      margin-top: 20px;
+      width: 18%;
+    }
+
+  }
+
+  nav .footer-links{
+    position: absolute;
+    left:27%;
+    display: block;
+    margin-top: 1em;
+    ul{
+      width: 184px;
+      margin: 0;
+      padding: 0;
+      li:first-child{
+      padding-top: 0;
+      }
+      li{
+        border:none;
+        padding:0 0 0.7em 0;
+        a{
+          margin:0;
+          height: auto;
+          color:$footer-links;
+          width: 184px;
+          padding:5px 0 2px 0;
+          font-size: 1em;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  #lower-footer-tabs-tablet{
+      display: none;
+  }
+
+  #lower-footer-tabs-desktop{
+    display: block;
+    position: absolute;
+    bottom: 0.1em;
+    left: 19em;
+    width: 59em;
+    font-size: 0.9em;
+    font-weight: 600;
+    .billing-area,.admin-area,.sales-area{
+      display: inline-block;
+      padding-right:5px;
+      a{
+        padding: 1em 1.4em 1em 1.4em;
+      }
+    }
+    .repair-area{
+      display: inline-block;
+      a{
+        padding: 1em 1.5em 1em 1.5em;
+      }
+    }
+    .account-area{
+      display: inline-block;
+      padding-right:5px;
+      a{
+        padding: 1em 1.5em 1em 1.5em;
+      }
+    }
+  }
+
+#billing-info-wrapper-tablet{
+  display: none;
+}
+
+  #billing-info-wrapper-desktop{
+    display: block;
+    position:absolute;
+    top: 7.3em;
+    left: 11.5em;
+    list-style: none;
+    pointer-events: none;
+    .billing-info{
+    opacity:0;
+    //outline: 0.1px solid $red-tooltip-border;
+    pointer-events: none;
+    z-index:999;
+    cursor:default;
+    margin:0;
+    padding:0;
+    background:#000;
+    width:19em;
+    height:10em;
+    transform:perspective(1000px)  rotate3d(1,0,0,45deg);
+    transform-origin: bottom;
+    transition:all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    @include box-shadow(0px, -2.5px, 8px, -1px, $tooltip-box-shadow);
+
+    .arrow-down{
+    position: absolute;
+    right: 44%;
+    bottom: -12.5%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #000;
+    @include box-shadow( 0px, 20px, 10px, -7px, #000);
+    }
+}
+    .onclick-billing-info{
+      opacity:1;
+      pointer-events: auto;
+      -webkit-transform: perspective(1000px) rotate3d(1,0,0,0deg);
+	     transform: perspective(1000px) rotate3d(1,0,0,0deg);
+       transition:all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  }
+
+  .billing-title{
+    list-style: none;
+    color: $red-title-text;
+    display: inline-block;
+    width: 6em;
+    margin: 0.5em 0 0 1.4em;
+    font-size: 1em;
+  }
+  .billing-close-icon{
+    display: inline-block;
+    font-size: 1.5em;
+    color: $close-icon-color;
+    position: absolute;
+    top: 0.1em;
+    right: 0.5em;
+    cursor: pointer;
+  }
+
+  .billing-inner-section-wrapper{
+
+    position: relative;
+    padding:1em;
+
+    .billing-phone-wrapper,.billing-fax-wrapper{
+      padding-bottom: 0.3em;
+    }
+
+    .billing-phone-icon,.billing-fax-icon,.billing-email-icon{
+      display: inline-block;
+    }
+    .billing-phone-text,.billing-fax-text,.billing-email-text{
+      display: inline-block;
+      font-size: 0.8em;
+      color: $footer-links;
+    }
+
+    .billing-phone-text{
+    position: relative;
+    top: -0.8em;
+    left: 0.6em;
+    width: 18em;
+    }
+    .billing-fax-icon,.billing-email-icon{
+      margin-left: 0.2em;
+    }
+    .billing-fax-text{
+      position: relative;
+      top: -0.5em;
+      left: 0.6em;
+    }
+    .billing-email-icon{
+      margin-top: 0.2em;
+    }
+    .billing-email-text{
+      position: relative;
+      top: -0.6em;
+      left: 0.6em;
+    }
+  }
+
+
+} //billing info wrapper end
+
+
+// footer >> social icon wrapper >> desktop
+  #social-icon-wrapper-tablet{
+    display: none;
+  }
+
+  #social-icon-wrapper-desktop{
+    display: block;
+    .social-icon-textarea{
+      list-style: none;
+      position: absolute;
+      top:1.5em;
+      right:19em;
+      font-size:0.9em;
+      color:$find-us-text;
+
+    }
+
+    .red-border{
+      height:2.5em;
+      position: absolute;
+      top:1em;
+      right:15.5em;
+      border:0.5px solid $red-top-border;
+    }
+
+    .red-triangle{
+      position: absolute;
+      top:1.5em;
+      right:15.1em;
+      width:0;
+      height:0;
+      border-top:6px solid transparent;
+      border-bottom:6px solid transparent;
+      border-left:6px solid $red-top-border;
+    }
+
+    .social-icons{
+      list-style: none;
+      display: inline-block;
+      position: absolute;
+      top:0;
+      right:-1.5em;
+      li{
+        display: inline-block;
+        padding: 1em 0.2em;
+      }
+    }
+
+  }
+
+#customer-service-wrapper-tablet{
+  display: none;
+}
+
+#customer-service-wrapper-desktop{
+  display: block;
+  list-style: none;
+
+  .reach-us-text{
+    display: inline-block;
+    position: absolute;
+    top: 8em;
+    right: 19em;
+    font-size: 0.9em;
+  }
+  .customer-service-text{
+    display: inline-block;
+    position: absolute;
+    top: 11em;
+    right: 21.4em;
+    font-size: 0.8em;
+    color:$find-us-text;
+  }
+
+  .red-border{
+    height:8em;
+    position: absolute;
+    top:7em;
+    right:15.5em;
+    border:0.5px solid $red-top-border;
+  }
+  .red-triangle{
+    position: absolute;
+    top:7.8em;
+    right:15.1em;
+    width:0;
+    height:0;
+    border-top:6px solid transparent;
+    border-bottom:6px solid transparent;
+    border-left:6px solid $red-top-border;
+  }
+
+  .customer-service-info-wrapper{
+    color:$footer-links;
+    position: absolute;
+    top: 8.5em;
+    width: 19em;
+    right: -1.5em;
+    font-size: 0.8em;
+
+  .phone-area-wrapper{
+    padding-bottom:0.1em;
+    .customer-area-phone-icon{
+        display: inline-block;
+    }
+    .customer-area-phone-text{
+      display: inline-block;
+      width: 15em;
+      position: relative;
+      top: -0.8em;
+      left: 0.2em;
+    }
+  }
+
+  .toll-area-wrapper{
+    padding-bottom:0.4em;
+    .customer-area-toll-icon{
+      display: inline-block;
+    }
+    .customer-area-toll-text,.customer-area-toll-free-text{
+      display: inline-block;
+    }
+    .customer-area-toll-text{
+      position:relative;
+      top: -0.8em;
+      left: 0.2em;
+    }
+    .customer-area-toll-free-text{
+      width:7em;
+      position:relative;
+      top: -0.8em;
+      left: 0.4em;
+      font-size: 1.1em;
+      color:$footer-white;
+    }
+  }
+
+  .fax-area-wrapper{
+    padding-bottom:0.4em;
+    .customer-area-fax-icon,.customer-area-fax-text{
+      display: inline-block;
+    }
+    .customer-area-fax-icon{
+      margin-left: 0.1em;
+    }
+    .customer-area-fax-text{
+      width: 16em;
+      position:relative;
+      top: -0.6em;
+      left: 0.4em;
+    }
+  }
+  .email-area-wrapper{
+    .customer-area-email-icon,.customer-area-email-text{
+      display: inline-block;
+    }
+    .customer-area-email-icon{
+      margin-left: 0.2em;
+    }
+    .customer-area-email-text{
+      position:relative;
+      top: -0.6em;
+      left: 0.4em;
+    }
+  }
+  }
+  }
+}
+
+
+#copyright{
+  background:$shade-black;
+  text-align: center;
+  font-size:90%;
+  margin-top: 2em;
+  .copy-text{
+    margin: 10px 0 0 0;
+    color:$find-us-text;
+  }
+}
